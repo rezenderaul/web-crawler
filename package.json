@@ -14,12 +14,11 @@
         "*.js": [
             "yarn prettier",
             "yarn eslint"
-            
         ]
     },
     "husky": {
         "hooks": {
-          "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+            "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
         }
     },
     "devDependencies": {
@@ -36,5 +35,8 @@
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"
         }
+    },
+    "dependencies": {
+        "puppeteer": "^15.3.1"
     }
 }
