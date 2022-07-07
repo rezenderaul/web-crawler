@@ -1,0 +1,40 @@
+{
+    "name": "boilerplate",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "eslint": "npx eslint . --ext .js --fix",
+        "prettier": "npx prettier --write --ignore-unknown .",
+        "prepare": "husky install",
+        "lint-staged": "lint-staged",
+        "cm": "cz"
+    },
+    "lint-staged": {
+        "*.js": [
+            "yarn prettier",
+            "yarn eslint"
+            
+        ]
+    },
+    "husky": {
+        "hooks": {
+          "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+        }
+    },
+    "devDependencies": {
+        "commitizen": "^4.2.4",
+        "cz-conventional-changelog": "3.3.0",
+        "eslint": "^7.32.0 || ^8.2.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.25.2",
+        "husky": "^8.0.0",
+        "lint-staged": "^13.0.3",
+        "prettier": "npm:@btmills/prettier"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}
